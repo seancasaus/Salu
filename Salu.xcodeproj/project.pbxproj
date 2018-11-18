@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		141DAD4C21A119290027BD96 /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141DAD4B21A119290027BD96 /* WordsModel.swift */; };
+		141DAD4C21A119290027BD96 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141DAD4B21A119290027BD96 /* WordsViewController.swift */; };
+		141DAD4E21A11E450027BD96 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141DAD4D21A11E450027BD96 /* WordCell.swift */; };
 		1488DE4D2188F53F00855EEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488DE4C2188F53F00855EEC /* Button.swift */; };
 		14DA7C612188F05300AFC23E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA7C602188F05300AFC23E /* AppDelegate.swift */; };
-		14DA7C632188F05300AFC23E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA7C622188F05300AFC23E /* ViewController.swift */; };
 		14DA7C662188F05300AFC23E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DA7C642188F05300AFC23E /* Main.storyboard */; };
 		14DA7C682188F05900AFC23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DA7C672188F05900AFC23E /* Assets.xcassets */; };
 		14DA7C6B2188F05900AFC23E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DA7C692188F05900AFC23E /* LaunchScreen.storyboard */; };
@@ -36,11 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		141DAD4B21A119290027BD96 /* WordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
+		141DAD4B21A119290027BD96 /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
+		141DAD4D21A11E450027BD96 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		1488DE4C2188F53F00855EEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		14DA7C5D2188F05300AFC23E /* Salu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DA7C602188F05300AFC23E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14DA7C622188F05300AFC23E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14DA7C652188F05300AFC23E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14DA7C672188F05900AFC23E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14DA7C6A2188F05900AFC23E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				14DA7C602188F05300AFC23E /* AppDelegate.swift */,
-				141DAD4B21A119290027BD96 /* WordsModel.swift */,
+				141DAD4D21A11E450027BD96 /* WordCell.swift */,
+				141DAD4B21A119290027BD96 /* WordsViewController.swift */,
 				1488DE4C2188F53F00855EEC /* Button.swift */,
-				14DA7C622188F05300AFC23E /* ViewController.swift */,
 				14DA7C642188F05300AFC23E /* Main.storyboard */,
 				14DA7C672188F05900AFC23E /* Assets.xcassets */,
 				14DA7C692188F05900AFC23E /* LaunchScreen.storyboard */,
@@ -262,10 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14DA7C632188F05300AFC23E /* ViewController.swift in Sources */,
 				1488DE4D2188F53F00855EEC /* Button.swift in Sources */,
+				141DAD4E21A11E450027BD96 /* WordCell.swift in Sources */,
 				14DA7C612188F05300AFC23E /* AppDelegate.swift in Sources */,
-				141DAD4C21A119290027BD96 /* WordsModel.swift in Sources */,
+				141DAD4C21A119290027BD96 /* WordsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
