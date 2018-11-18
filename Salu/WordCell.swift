@@ -11,5 +11,7 @@ import UIKit
 class WordCell: UITableViewCell {
     @IBOutlet weak var wordLabel: UILabel!
     
-    
+    func SetWord(word: Word) {
+        wordLabel.text = word.defaultWord
+    }
 }

@@ -81,7 +81,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ams-2W-J9C" customClass="WordCell" customModule="Salu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordCell" id="Ams-2W-J9C" customClass="WordCell" customModule="Salu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ams-2W-J9C" id="4Kr-3O-caH">
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1248.8" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Word Controller-->
         <scene sceneID="Xty-JW-pOX">
             <objects>
-                <viewController id="whZ-m1-Jmo" sceneMemberID="viewController">
+                <viewController id="whZ-m1-Jmo" customClass="AddWordController" customModule="Salu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B2a-0P-3YC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,6 +134,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="AddWord:" destination="whZ-m1-Jmo" eventType="touchUpInside" id="Tz5-kK-43W"/>
                                     <segue destination="R4h-Ck-bXe" kind="show" id="gl6-G5-VZy"/>
                                 </connections>
                             </button>
@@ -148,6 +149,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Qd-EE-8sd"/>
                     </view>
+                    <connections>
+                        <outlet property="wordInput" destination="6xC-Xp-KVW" id="d2I-CQ-ct1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6M7-5r-JCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
