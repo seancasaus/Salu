@@ -8,14 +8,11 @@
 
 import UIKit
 
-class WordsModel: UIViewController {
-    
+class WordsController: UIViewController {
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
 }
 

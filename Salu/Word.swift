@@ -13,9 +13,9 @@ class Word {
     var translatedWord: String
     var targetLanguage: String
     
-    init (defaultWord: String, translatedWord: String, targetLanguage: String) {
-        self.defaultWord = defaultWord
-        self.translatedWord = translatedWord
-        self.targetLanguage = targetLanguage
+    init (defaultWord2: String, translatedWord2: String, targetLanguage2: String) {
+        self.defaultWord = defaultWord2
+        self.translatedWord = translatedWord2
+        self.targetLanguage = targetLanguage2
     }
 }

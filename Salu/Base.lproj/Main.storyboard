@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="367" y="134"/>
         </scene>
-        <!--Words Model-->
+        <!--Words Controller-->
         <scene sceneID="lPi-6f-GFN">
             <objects>
-                <viewController id="R4h-Ck-bXe" customClass="WordsModel" customModule="Salu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R4h-Ck-bXe" customClass="WordsController" customModule="Salu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iLA-oE-pBD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,15 +129,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tI2-Kd-Hg3">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="AddWord:" destination="whZ-m1-Jmo" eventType="touchUpInside" id="Tz5-kK-43W"/>
-                                    <segue destination="R4h-Ck-bXe" kind="show" id="gl6-G5-VZy"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6xC-Xp-KVW">
                                 <rect key="frame" x="16" y="185" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -145,6 +136,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tI2-Kd-Hg3">
+                                <rect key="frame" x="164" y="320" width="46" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="AddWord:" destination="whZ-m1-Jmo" eventType="touchUpInside" id="Tz5-kK-43W"/>
+                                    <segue destination="R4h-Ck-bXe" kind="show" id="gl6-G5-VZy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Qd-EE-8sd"/>
@@ -162,7 +162,6 @@
         <image name="enterBackgorund" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r1b-Ww-A1K"/>
         <segue reference="gl6-G5-VZy"/>
     </inferredMetricsTieBreakers>
 </document>

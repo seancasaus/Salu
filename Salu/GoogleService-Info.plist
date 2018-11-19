@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>406762047454-94puhla7r2o9vfgl553aq83oc2u58nbg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.406762047454-94puhla7r2o9vfgl553aq83oc2u58nbg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBx_LcrPDxD4ZCBir6J65diAEzv_bTAcs4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>406762047454</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.seancasaus.Salu</string>
+	<key>PROJECT_ID</key>
+	<string>saludb-ec066</string>
+	<key>STORAGE_BUCKET</key>
+	<string>saludb-ec066.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:406762047454:ios:62cc38fcef81ae79</string>
+	<key>DATABASE_URL</key>
+	<string>https://saludb-ec066.firebaseio.com</string>
+</dict>
+</plist>
