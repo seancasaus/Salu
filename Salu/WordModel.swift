@@ -11,23 +11,17 @@ import CoreData
 import Firebase
 
 class WordModel {
-    var words: [WordObj] = []
+    var cellArray: [WordObj] = []
     
-    init () {
+    func getArray(mySnapshot: DataSnapshot) {
+ 
+        for child in mySnapshot.children {
+            //print((child as! DataSnapshot).value!)
+            var temp = ((child as! DataSnapshot).value!) as! [String : Any]
+            let myWordObj: WordObj = WordObj(defaultWord: temp["defaultWord"] as! String, translatedWord: temp["targetWord"] as! String, targetLanguage: temp["targetLanguage"] as! String)
+            cellArray.append(myWordObj)
+        }
     }
-    
-    func addWord(defaultName: String, translatedName: String, targetName: String) {
-        words.append(WordObj(defaultWord: defaultName, translatedWord: translatedName, targetLanguage: targetName))
-    }
-    
-    func deleteCity(x: Int) {
-        words.remove(at: x)
-    }
-    
-    func sizeOfArray() -> Int {
-        return words.count
-    }
-    
 }
 
 class WordObj {
@@ -95,5 +89,24 @@ class FStore {
             
         })
         jsonQuery.resume()
+    }
+}
+
+class JSON {
+    struct Words: Codable {
+        var defaultWord: String
+        var targetLanguage: String
+        var targetWord: String
+    }
+    
+    struct DataBasePull: Codable {
+        var dictionary: [Words]
+    }
+    
+    func decode(data: Data) -> [Words] {
+        if let result = try? JSONDecoder().decode(DataBasePull.self, from: data) {
+            return result.dictionary
+        }
+        return [Words]()
     }
 }

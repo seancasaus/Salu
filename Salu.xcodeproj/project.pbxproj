@@ -14,6 +14,7 @@
 		141DAD9821A1E7640027BD96 /* Salu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 141DAD9621A1E7640027BD96 /* Salu.xcdatamodeld */; };
 		1488DE4D2188F53F00855EEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488DE4C2188F53F00855EEC /* Button.swift */; };
 		14C546CE21A210FA0032C763 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14C546CD21A210FA0032C763 /* GoogleService-Info.plist */; };
+		14C546D021A3B1240032C763 /* FlashCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C546CF21A3B1230032C763 /* FlashCardViewController.swift */; };
 		14DA7C612188F05300AFC23E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA7C602188F05300AFC23E /* AppDelegate.swift */; };
 		14DA7C662188F05300AFC23E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DA7C642188F05300AFC23E /* Main.storyboard */; };
 		14DA7C682188F05900AFC23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DA7C672188F05900AFC23E /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		141DAD9721A1E7640027BD96 /* Salu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salu.xcdatamodel; sourceTree = "<group>"; };
 		1488DE4C2188F53F00855EEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		14C546CD21A210FA0032C763 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14C546CF21A3B1230032C763 /* FlashCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewController.swift; sourceTree = "<group>"; };
 		14DA7C5D2188F05300AFC23E /* Salu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DA7C602188F05300AFC23E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DA7C652188F05300AFC23E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				141DAD4D21A11E450027BD96 /* WordCell.swift */,
 				141DAD4B21A119290027BD96 /* WordsViewController.swift */,
 				141DAD5521A1249F0027BD96 /* AddWordController.swift */,
+				14C546CF21A3B1230032C763 /* FlashCardViewController.swift */,
 				141DAD5721A12DC00027BD96 /* WordModel.swift */,
 				14DA7C742188F05900AFC23E /* SaluTests */,
 				14DA7C642188F05300AFC23E /* Main.storyboard */,
@@ -361,6 +364,7 @@
 				14DA7C612188F05300AFC23E /* AppDelegate.swift in Sources */,
 				141DAD5821A12DC00027BD96 /* WordModel.swift in Sources */,
 				141DAD4C21A119290027BD96 /* WordsViewController.swift in Sources */,
+				14C546D021A3B1240032C763 /* FlashCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

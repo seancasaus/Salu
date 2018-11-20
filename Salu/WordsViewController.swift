@@ -7,14 +7,42 @@
 //
 
 import UIKit
-
-class WordsController: UIViewController {
+import Firebase
+//UITableViewDataSource
+class WordsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var cellLabel: UIView!
+    @IBOutlet weak var wordTableView: UITableView!
+    var json = JSON()
+    var wordModel = WordModel()
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(wordModel.cellArray)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath) as! WordCell
+        cell.wordLabel.text = wordModel.cellArray[indexPath.row].translatedWord
+        
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return wordModel.cellArray.count
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference()
+        _ = ref.observe(DataEventType.value, with: { (snapshot) in
+            self.wordModel.getArray(mySnapshot: snapshot)
+            self.wordTableView.reloadData()
+        })
     }
 }
+
+
+
+
 
 //extension AddWordController: UITableViewDataSource, UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
