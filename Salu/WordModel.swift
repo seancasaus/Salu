@@ -62,4 +62,38 @@ class FStore {
         let tw = key.child("targetWord")
         tw.setValue(targetWord)
     }
+    
+    
+    func translateWord(defaultWord: String, targetLanguage: String) {
+        let apiKey = "AIzaSyBzTHFD3rKgOSkxj1EhCh3-brXhf_K4WHw"
+        
+        let urlAsString: String = "https://translation.googleapis.com/language/translate/v2?key=\(apiKey)&q=\(defaultWord)&target=\(targetLanguage)&format=text"
+        
+        print(urlAsString)
+        let url = URL(string: urlAsString)!
+        let urlSession = URLSession.shared
+        print("got here")
+        let jsonQuery = urlSession.dataTask(with: url, completionHandler: { data, response, error -> Void in
+            if (error != nil) {
+                print("got here")
+                print(error!.localizedDescription)
+            } else {
+                print("got here")
+                let jsonResult = (try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
+                print(jsonResult)
+                let setOne = jsonResult["data"] as! [String : Any]
+                print(setOne);
+                let translations = setOne["translations"] as! NSArray
+                print(translations);
+                let translatedContent = translations[0] as! [String : Any]
+                let translatedWord = translatedContent["translatedText"]
+                print(translatedWord!)
+                
+                self.addData(defaultWord: defaultWord, targetLanguage: targetLanguage, targetWord: translatedWord as! String)
+            }
+            
+            
+        })
+        jsonQuery.resume()
+    }
 }
