@@ -19,7 +19,10 @@ class WordsController: UIViewController, UITableViewDelegate, UITableViewDataSou
         print(wordModel.cellArray)
         let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath) as! WordCell
         cell.wordLabel.text = wordModel.cellArray[indexPath.row].translatedWord
-        
+        let red = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        let blue = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        let green = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        cell.backgroundColor = UIColor.init(displayP3Red: red, green: green, blue: blue, alpha: 1)
         return cell
     }
 
@@ -40,20 +43,3 @@ class WordsController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
 }
 
-
-
-
-
-//extension AddWordController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return words.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let word = words[indexPath.row]
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell") as! WordCell
-//        cell.SetWord(word: word)
-//        return cell
-//    }
-//}
