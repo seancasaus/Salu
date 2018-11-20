@@ -29,6 +29,11 @@ class WordsController: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wordModel.cellArray.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        wordModel.cellArray.remove(at: indexPath.row)
+        self.wordTableView.reloadData()
+    }
 
 
     override func viewDidLoad() {
