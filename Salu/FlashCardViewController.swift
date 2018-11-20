@@ -10,24 +10,59 @@ import UIKit
 import MapKit
 
 class FlashCardViewController: UIViewController, MKMapViewDelegate {
+    var defaultWord: String?
+    var translatedWord: String?
+    var targetLanguage: String?
+    var languages = ["es" : "Spanish", "de" : "German", "fr" : "French", "pt" : "Portuguese", "it" : "Italian"]
+    var locations = ["es" : "Mexico", "de" : "Germany", "fr" : "France", "pt" : "Brazil", "it" : "Italy"]
+    var isFlipped: Bool = false
+    var mapSwitch: Int = 0
+    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
+    
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var mapType: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blue
+        wordLabel.text = translatedWord
+        languageLabel.text = languages[targetLanguage!]
         
-        CLGeocoder().geocodeAddressString("France", completionHandler:
+        updateMap(location: locations[targetLanguage!]!)
+
+    }
+    
+    @IBAction func FlipCard(_ sender: UIButton) {
+        if isFlipped == false {
+            wordLabel.text = defaultWord
+            languageLabel.text = "English"
+            self.view.backgroundColor = UIColor.purple
+            updateMap(location: "United States")
+            isFlipped = true
+        } else {
+            wordLabel.text = translatedWord
+            languageLabel.text = languages[targetLanguage!]
+            self.view.backgroundColor = UIColor.blue
+            updateMap(location: locations[targetLanguage!]!)
+            isFlipped = false
+        }
+    }
+    
+    func updateMap(location: String) {
+        CLGeocoder().geocodeAddressString(location, completionHandler:
             
             {(placemarks, error) in
                 if error != nil {
                     print("Geocode failed: \(error!.localizedDescription)")
                     
                 } else if placemarks!.count > 0 {
+                    
                     let placemark = placemarks![0]
                     let location = placemark.location
                     let coords = location!.coordinate
                     
-                    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                    let span = MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
                     let region = MKCoordinateRegion(center: placemark.location!.coordinate, span: span)
                     self.map.setRegion(region, animated: true)
                     let ani = MKPointAnnotation()
@@ -37,32 +72,15 @@ class FlashCardViewController: UIViewController, MKMapViewDelegate {
                     self.map.addAnnotation(ani)
                 }
         })
-
     }
     
-    
-//    @IBAction func showMap(_ sender: Any) {
-//        //print("Inside Show Map Function");
-//
-//        switch(mapType.selectedSegmentIndex)
-//        {
-//        case 0:
-//            map.mapType = MKMapType.standard
-//        case 1:
-//            map.mapType = MKMapType.satellite
-//        default:
-//            map.mapType = MKMapType.standard
-//        }
-//
-//        // display the map
-//        let region: MKCoordinateRegion = MKCoor
-//        self.map.setRegion(region, animated: true)
-//
-//        // add an annotation
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = coordinates
-//        annotation.title = titleView.text
-//
-//        self.map.addAnnotation(annotation)
-//    }
+    @IBAction func changeMap(_ sender: UISegmentedControl) {
+        if mapSwitch == 0 {
+            self.map.mapType = MKMapType.satellite
+            mapSwitch = 1
+        } else {
+            self.map.mapType = MKMapType.standard
+            mapSwitch = 0
+        }
+    }
 }

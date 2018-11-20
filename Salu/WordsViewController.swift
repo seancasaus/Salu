@@ -41,5 +41,16 @@ class WordsController: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.wordTableView.reloadData()
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectedIndex: IndexPath = wordTableView.indexPath(for: sender as! UITableViewCell)!
+        if(segue.identifier == "toFlashCard") {
+            if let destination: FlashCardViewController = segue.destination as? FlashCardViewController {
+                destination.defaultWord = wordModel.cellArray[selectedIndex.row].defaultWord
+                destination.targetLanguage = wordModel.cellArray[selectedIndex.row].targetLanguage
+                destination.translatedWord = wordModel.cellArray[selectedIndex.row].translatedWord
+            }
+        }
+    }
 }
 
