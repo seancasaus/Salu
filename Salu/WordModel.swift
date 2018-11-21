@@ -22,6 +22,10 @@ class WordModel {
             cellArray.append(myWordObj)
         }
     }
+    
+    func deleteItem(mySnapshot: DataSnapshot) {
+        
+    }
 }
 
 class WordObj {
@@ -44,6 +48,10 @@ class FStore {
     //defaultName: String, translatedName: String, targetName: String
     func addData(defaultWord: String, targetLanguage: String, targetWord: String) {
         ref = Database.database().reference()
+        print(defaultWord)
+        print(targetLanguage)
+        print(targetWord)
+
         
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let wordCode: String = String((0...19).map{ _ in letters.randomElement()! })
@@ -81,7 +89,9 @@ class FStore {
                 print(translations);
                 let translatedContent = translations[0] as! [String : Any]
                 let translatedWord = translatedContent["translatedText"]
-                print(translatedWord!)
+//                print(translatedWord!)
+//                print(defaultWord)
+//                print(targetLanguage)
                 
                 self.addData(defaultWord: defaultWord, targetLanguage: targetLanguage, targetWord: translatedWord as! String)
             }

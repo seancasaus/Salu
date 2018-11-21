@@ -35,7 +35,6 @@ class WordsController: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.wordTableView.reloadData()
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         var ref: DatabaseReference!
@@ -48,8 +47,8 @@ class WordsController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let selectedIndex: IndexPath = wordTableView.indexPath(for: sender as! UITableViewCell)!
         if(segue.identifier == "toFlashCard") {
+            let selectedIndex: IndexPath = wordTableView.indexPath(for: sender as! UITableViewCell)!
             if let destination: FlashCardViewController = segue.destination as? FlashCardViewController {
                 destination.defaultWord = wordModel.cellArray[selectedIndex.row].defaultWord
                 destination.targetLanguage = wordModel.cellArray[selectedIndex.row].targetLanguage
