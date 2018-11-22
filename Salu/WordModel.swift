@@ -14,7 +14,8 @@ class WordModel {
     var cellArray: [WordObj] = []
     
     func getArray(mySnapshot: DataSnapshot) {
- 
+        cellArray = []
+        
         for child in mySnapshot.children {
             //print((child as! DataSnapshot).value!)
             var temp = ((child as! DataSnapshot).value!) as! [String : Any]
@@ -52,17 +53,24 @@ class FStore {
         print(targetLanguage)
         print(targetWord)
 
-        
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let wordCode: String = String((0...19).map{ _ in letters.randomElement()! })
         
-        let key = ref.child(wordCode)
-        let dw = key.child("defaultWord")
-        dw.setValue(defaultWord)
-        let tl = key.child("targetLanguage")
-        tl.setValue(targetLanguage)
-        let tw = key.child("targetWord")
-        tw.setValue(targetWord)
+        //let wordCode: String = defaultWord + targetWord
+        
+        let json = ["defaultWord" : defaultWord,
+                    "targetLanguage" : targetLanguage,
+                    "targetWord" : targetWord]
+        
+        let key = self.ref.child(wordCode)
+        key.setValue(json)
+//        let key = self.ref.child(wordCode)
+//        let dw = key.child("defaultWord")
+//        dw.setValue(defaultWord)
+//        let tl = key.child("targetLanguage")
+//        tl.setValue(targetLanguage)
+//        let tw = key.child("targetWord")
+//        tw.setValue(targetWord)
     }
     
     
